@@ -36,19 +36,118 @@
   <div class="slides">
     <section>
       <h1>
-      </h1>
+      	Menus
+      </hi>
+      <h3>
+        Creating menus in HTML5
+      </h3>
     </section>
     <section>
-      Theme Changes to Solarized. Isn't it Nice ;)
+      <p>
+        In HTML5 a menu is a list of commands, not just ordinary list elements, but this is still not supported by all browsers (1).
+      </p>
+    </section>
+    
+    <section>
+      <p>Menus can still be set up like lists:</p>
+      <ul>
+        <li> <a href="#"> Home </a></li>
+        <li> <a href="#"> Blog </a></li>
+        <li> <a href="#">About </a></li>
+      </ul>
+      
+      <pre>
+        <code>
+          &lt;ul&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Home &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Blog &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt;About &lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+        </code>
+      </pre>
+      </section>
+      
+      <section>
+      <p>But you can also use the -menu- tag </p>
+      <menu type="list">
+        <li> <a href="#"> Home </a></li>
+        <li> <a href="#"> Blog </a></li>
+        <li> <a href="#">About </a></li>
+      </menu>
+      
+      <pre>
+        <code>
+       &lt;menu&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Home &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Blog &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt;About &lt;/a&gt;&lt;/li&gt;
+ &lt;/menu&gt;
+        </code>
+      </pre>
+     
+      
     </section>
     <section>
-        <section>
-            LalaLand Floor 1
-        </section>
-        <section>
-            LalaLand Floor 2
-        </section>
+      <p>You can also use -menu-item- to label items in your menu - giving you more control and bringing up a pop-up menu (Browser compatibility is limited to Firefox currently):
+      </p>
+      
+      <menu>
+  
+<menu label="Share on...">
+    <menuitem label="Twitter" icon="ico_twitter.png"
+    onclick="window.open('//twitter.com/intent/tweet?text='+window.location.href);">
+    </menuitem>
+    <menuitem label="Facebook" icon="ico_facebook.png"
+    onclick="window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);">
+    </menuitem>
+    </menu>
+    
+    <pre>
+      <code>
+        &lt;menu&gt;
+  
+&lt;menu label=&quot;Share on...&quot;&gt;
+    &lt;menuitem label=&quot;Twitter&quot; icon=&quot;ico_twitter.png&quot;
+    onclick=&quot;window.open('//twitter.com/intent/tweet?text='+window.location.href);&quot;&gt;
+    &lt;/menuitem&gt;
+    &lt;menuitem label=&quot;Facebook&quot; icon=&quot;ico_facebook.png&quot;
+    onclick=&quot;window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);&quot;&gt;
+    &lt;/menuitem&gt;
+    &lt;/menu&gt;
+      </code>
+    </pre>
     </section>
+    <section>
+      <h2> Global attributes for menu tag </h2>
+      <p> There are three global attributes for the menu tag:
+          <ul>
+            <li> List: A list of comments or elements
+            </li>
+            <li> Context: Must be activated - a pop-up menu
+            </li>
+            <li> Toolbar: Active commands
+              
+            </li>
+          </ul>
+      </p>
+      </section>
+      <section>
+      <p> As the menu tag is still not functional in many browsers, you can expect the following default settings</p>
+      <pre>
+        <code>
+          menu {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+        </code>
+      </pre>
+      </section>
+    
   </div>
 </div>
  
