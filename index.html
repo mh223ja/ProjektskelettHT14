@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>reveal.js - The HTML Presentation Framework</title>
@@ -10,33 +11,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="css/reveal.min.css">
   <link rel="stylesheet" href="css/theme/serif.css" id="theme">
- 
+
   <!-- For syntax highlighting -->
   <link rel="stylesheet" href="lib/css/zenburn.css">
- 
+
   <!-- If the query includes 'print-pdf', include the PDF print sheet -->
   <script>
     if (window.location.search.match(/print-pdf/gi)) {
       var link = document.createElement('link');
- 
+
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = 'css/print/pdf.css';
       document.getElementsByTagName('head')[0].appendChild(link);
     }
   </script>
- 
+
   <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
+
 <body>
- 
+
   <div class="reveal">
-  <div class="slides">
-    <section>
-      <h1>
-      	Menus
+    <div class="slides">
+      <section>
+        <h1>
+      	the &lt;Menu&gt; tag
       </hi>
       <h3>
         Creating menus in HTML5
@@ -49,51 +51,58 @@
     </section>
     
     <section>
-      <p>Menus can still be set up like lists:</p>
+      <p>&lt;menu&gt; and &lt;ul&gt; are both used to set up unordered lists of items</p>
       <ul>
-        <li> <a href="#"> Home </a></li>
-        <li> <a href="#"> Blog </a></li>
-        <li> <a href="#">About </a></li>
+        <li> <a href="#"> First </a></li>
+        <li> <a href="#"> Second </a></li>
+        <li> <a href="#"> Third </a></li>
       </ul>
       
       <pre>
         <code>
           &lt;ul&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Home &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Blog &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt;About &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; First &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Second &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Third &lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
         </code>
       </pre>
       </section>
       
       <section>
-      <p>But you can also use the -menu- tag </p>
-      <menu type="list">
-        <li> <a href="#"> Home </a></li>
-        <li> <a href="#"> Blog </a></li>
-        <li> <a href="#">About </a></li>
-      </menu>
-      
+      <p>But you can also use the &lt;menu&gt; tag when you have a list of commands </p>
+     <menu>
+  
+   
+    <menu type="popup">
+      <menuitem label="New" onclick="newFile()">
+      <menuitem label="Save" onclick="saveFile()">
+      <menuitem label="Edit" onclick="editFile()">
+    </menu>
+    
+
+
+      <p>
       <pre>
         <code>
-       &lt;menu&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Home &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt; Blog &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt; &lt;a href=&quot;#&quot;&gt;About &lt;/a&gt;&lt;/li&gt;
- &lt;/menu&gt;
+      &lt;menu type=&quot;popup&quot;&gt;
+      &lt;menuitem label=&quot;New&quot; onclick=&quot;newFile()&quot;&gt;
+      &lt;menuitem label=&quot;Save&quot; onclick=&quot;saveFile()&quot;&gt;
+      &lt;menuitem label=&quot;Edit&quot; onclick=&quot;editFile()&quot;&gt;
+     &lt;/menu&gt;
         </code>
       </pre>
+      </p>
      
       
     </section>
-    <section>
-      <p>You can also use -menu-item- to label items in your menu - giving you more control and bringing up a pop-up menu (Browser compatibility is limited to Firefox currently):
+    
+     <section>
+      <p>You can also use  &lt;menuitem&gt;  to label items in your menu 
       </p>
       
-      <menu>
-  
-<menu label="Share on...">
+   <menu>
+   <menu label="Share on...">
     <menuitem label="Twitter" icon="ico_twitter.png"
     onclick="window.open('//twitter.com/intent/tweet?text='+window.location.href);">
     </menuitem>
@@ -104,9 +113,8 @@
     
     <pre>
       <code>
-        &lt;menu&gt;
-  
-&lt;menu label=&quot;Share on...&quot;&gt;
+    &lt;menu&gt;
+   &lt;menu label=&quot;Share on...&quot;&gt;
     &lt;menuitem label=&quot;Twitter&quot; icon=&quot;ico_twitter.png&quot;
     onclick=&quot;window.open('//twitter.com/intent/tweet?text='+window.location.href);&quot;&gt;
     &lt;/menuitem&gt;
@@ -114,28 +122,50 @@
     onclick=&quot;window.open('//facebook.com/sharer/sharer.php?u='+window.location.href);&quot;&gt;
     &lt;/menuitem&gt;
     &lt;/menu&gt;
+   
       </code>
     </pre>
     </section>
     <section>
-      <h2> Global attributes for menu tag </h2>
-      <p> There are three global attributes for the menu tag:
+      <h2> Type attributes for menu tag </h2>
+      <p> There are three type attributes for the menu tag (2):
           <ul>
-            <li> List: A list of comments or elements
+            <li> List: A list of commands or elements
             </li>
             <li> Context: Must be activated - a pop-up menu
             </li>
-            <li> Toolbar: Active commands
+            <li> Toolbar: Active commands 
               
             </li>
           </ul>
+        
       </p>
       </section>
       <section>
-      <p> As the menu tag is still not functional in many browsers, you can expect the following default settings</p>
+      <section>
+        <h2> List </h2>
+        <p> This is a list of commands that the user can choose to perform and uses the -li tag</p>
+      </section>
+         <section>
+      <h2> Context </h2>
+        <p> This type of menu can only be accessed by an action taken by the user - clicking on a button, right clicking, etc.</p>
+      </section>
+      <section>
+      <h2> Toolbar </h2>
+      <p> Place to present active commands that the user can perform </p>
+      </section>
+      </section>
+      
+      <section>
+      <p> As the menu tag is still not functional in many browsers, you can expect the following default settings (3)</p>
+      <menu>
+        <li> Edit </li>
+        <li> Save </li>
+        <li> Print</li>
+      </menu>
       <pre>
         <code>
-          menu {
+    menu {
     display: block;
     list-style-type: disc;
     margin-top: 1em;
@@ -143,10 +173,29 @@
     margin-left: 0;
     margin-right: 0;
     padding-left: 40px;
-}
+          } 
         </code>
       </pre>
       </section>
+      <section>
+      <h2> When to use &lt;menu&gt;</h2>
+      <p>&lt;menu&gt; should NOT be used as a navigation tool </p>
+      <p> &lt;menu&gt; is for interaction with the website </p>
+      <p> Keep in mind browser compatibility issues and work accordingly</p>
+      </section>
+     
+    <section>
+      <h2> References </h2>
+      <p> 
+      <ol>
+      <li>Staflin, Rolf (2013) "HTML 5: HTML och CSS-boken" Pagina Förlags AB: Germany </li>
+       <li> W3Schools.com </li>
+      <li> html.spec.whatwg.org</li>
+          </ol>
+      </p>
+    </section>
+   
+      
     
   </div>
 </div>
